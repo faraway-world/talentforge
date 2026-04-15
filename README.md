@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛡️ TALENTFORGE (v1.0)
+### Tactical Lifecycle & Skill Mastery Engine
 
-## Getting Started
+TalentForge is a custom-engineered productivity OS designed for high-discipline individuals. It replaces traditional "to-do lists" with a **Hexagonal Achievement Map** and an **Integrated Financial Ledger**, cross-linked via a local **Wiki/Knowledge Base**.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛰️ Core Modules
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Hex-Grid Skill Tree
+- **Geometric Pathfinding:** Skills are mapped on an axial coordinate system ($q, r$).
+- **Neural Linking:** Define prerequisites and dependencies with 60°/120° circuit-trace lines.
+- **Dynamic Snapping:** Drag-and-drop physics with GPU-accelerated snapping to the nearest hex center.
+- **The Codex:** A searchable index for fast navigation and auto-panning.
 
-## Learn More
+### 2. Tactical Kanban (Tasks)
+- **Weight-Based Triage:** Tasks are automatically sorted by priority: `CRITICAL` > `HIGH` > `MEDIUM` > `LOW`.
+- **Active Prioritization:** Critical tasks are physically locked to the top of your view to enforce focus.
+- **Reference Binding:** Deep-link tasks directly into your Skill nodes or Wiki notes using `@` triggers.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Financial Ledger (Finance)
+- **Zero-Latency Tracking:** Quick-entry for income and expenses with category-based filtering.
+- **Balance Projections:** Real-time calculation of total liquidity.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Neural Wiki (Notes)
+- **Markdown Support:** Clean, structured documentation for your study sessions.
+- **Cross-Referencing:** Bi-directional linking between notes, tasks, and skills.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Tech Stack
+- **Framework:** [Next.js 16.1](https://nextjs.org/) (App Router & Server Actions)
+- **Language:** [TypeScript](https://www.typescriptlang.org/) (Strictly Typed)
+- **Database:** [SQLite](https://sqlite.org/) (Local) / [PostgreSQL](https://www.postgresql.org/) (Production)
+- **ORM:** [Prisma](https://www.prisma.io/)
+- **Animation/Physics:** [Framer Motion](https://www.framer.com/motion/)
+- **UI Architecture:** [Shadcn UI](https://ui.shadcn.com/) + [Tailwind CSS](https://tailwindcss.com/)
+- **Auth:** [NextAuth.js](https://next-auth.js.org/) (Configured for Prototype Mode)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Deployment (Vercel)
+
+This project is optimized for Vercel with a one-click database sync.
+
+1. **Push to GitHub:** Ensure your `.env` variables are secure.
+2. **Connect to Vercel:** Import the repository.
+3. **Storage:** Add the **Vercel Postgres** instance.
+4. **Build Command:**
+   ```bash
+   npx prisma generate && npx prisma db push --force-reset && npx prisma db seed && next build
